@@ -1,0 +1,13 @@
+﻿@using ProductApi.Models.Requests
+@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@{
+}
+
+@model SignupRequest
+@using (Html.BeginForm("Register", "Account", FormMethod.Post))
+{
+    @Html.EditorForModel()
+    <button type="submit">Registor</button>
+}

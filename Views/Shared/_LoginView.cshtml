@@ -1,0 +1,10 @@
+﻿@using ProductApi.Services
+@inject IHttpContextAccessor _httpContext
+
+@if (_httpContext.HttpContext.User.Identity.IsAuthenticated)
+{
+    @_httpContext.HttpContext.User.FindFirst(r => r.Type == TokenClaimsConstant.Username).Value <a class="nav-link text-dark" href="/Account/Logout"> Logout </a>
+} else
+{
+    <a class="nav-link text-dark" href="/Account/Login">Login</a>
+}
